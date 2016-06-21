@@ -1,0 +1,68 @@
+<dom-module id="address-component">
+
+  <template>
+        <table>
+            <tr>
+                <td><span>Via</span></td>
+                <td><input id="via" value={{via::input}}></td>
+            </tr>
+            <tr>
+                <td><span>Località</span></td>
+                <td><input id="localita" value={{localita::input}}></td>
+            </tr>
+            <tr>
+                <td><span>Provincia</span></td>
+                <td><input id="provincia" value={{provincia::input}}></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button on-click="controlla">Controlla</button></td>
+            </tr>
+        </table>
+  </template>
+
+  <script>
+
+    Polymer({
+      is: 'address-component',
+      behaviors: [StoreManager.ReduxBehavior],
+      properties: {
+          view: {
+              type: String
+          },
+          tipo: {
+              type: String
+          },
+          via: {
+              type: String
+          },
+          localita: {
+              type: String
+          },
+          provincia: {
+              type: String
+          }
+      },
+      actions: {
+        action: function(event) {
+          return { 
+              type: event.type,
+              data: event.data 
+          };
+        }
+      },
+      controlla: function() {
+        this.dispatch('action', {
+            type: this.view + '_notifyAddress',
+            data: {
+                tipo: this.tipo,
+                via: this.via,
+                localita: this.localita,
+                provincia: this.provincia
+            }
+        });
+      }
+    });
+
+  </script>
+
+</dom-module>

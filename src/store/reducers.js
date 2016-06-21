@@ -1,0 +1,3 @@
+var StoreManager = {};
+
+StoreManager.reducers = {};
