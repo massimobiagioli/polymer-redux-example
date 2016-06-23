@@ -57,12 +57,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <span>[[indirizzo_residenza.via]]</span>
       <span>[[indirizzo_residenza.localita]]</span>
       <span>[[indirizzo_residenza.provincia]]</span>
+      <br/>
 
       <br/>
 
       <h1>Indirizzo Lavoro</h1>
       <address-component view="view1" tipo="lavoro"></address-component>
       <br/>
+
+      <span>Indirizzo Lavoro: </span>
+      <span>[[indirizzo_lavoro.via]]</span>
+      <span>[[indirizzo_lavoro.localita]]</span>
+      <span>[[indirizzo_lavoro.provincia]]</span>
 
     </div>
 
@@ -77,6 +83,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           indirizzo_residenza: {
               type: Object,
               statePath: 'view1.indirizzo_residenza'
+          },
+          indirizzo_lavoro: {
+              type: Object,
+              statePath: 'view1.indirizzo_lavoro'
           }
       },
     });
