@@ -53,6 +53,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <address-component view="view1" tipo="residenza"></address-component>
       <br/>
 
+      <span>Indirizzo Residenza: </span>
+      <span>[[indirizzo_residenza.via]]</span>
+      <span>[[indirizzo_residenza.localita]]</span>
+      <span>[[indirizzo_residenza.provincia]]</span>
+
+      <br/>
+
       <h1>Indirizzo Lavoro</h1>
       <address-component view="view1" tipo="lavoro"></address-component>
       <br/>
@@ -64,9 +71,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
 
     Polymer({
-
-      is: 'my-view1'
-
+      is: 'my-view1',
+      behaviors: [StoreManager.ReduxBehavior],
+      properties: {
+          indirizzo_residenza: {
+              type: Object,
+              statePath: 'view1.indirizzo_residenza'
+          }
+      },
     });
 
   </script>

@@ -10,7 +10,7 @@ StoreManager.reducers['view1'] = function(state, action) {
                 via: action.data.via,
                 localita: action.data.localita,
                 provincia: action.data.provincia,
-            }
+            }            
             break;
     }
     
